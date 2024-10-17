@@ -29,6 +29,8 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.a512lasalleapp.ui.screens.CalendarScreen
+import com.example.a512lasalleapp.ui.screens.ChangePasswordScreen
+import com.example.a512lasalleapp.ui.screens.ChangeThemeScreen
 import com.example.a512lasalleapp.ui.screens.GradesScreen
 import com.example.a512lasalleapp.ui.screens.GradesDetailScreen
 import com.example.a512lasalleapp.ui.screens.HomeScreen
@@ -109,6 +111,12 @@ class MainActivity : ComponentActivity() {
                         }
                         composable(route = Screens.Settings.route) {
                             SettingsScreen(innerPadding = innerPadding, navController = navController)
+                        }
+                        composable(route = "change_password") {
+                            ChangePasswordScreen(navController = navController)
+                        }
+                        composable(route = "change_theme") {
+                            ChangeThemeScreen(navController = navController)
                         }
                         composable(
                             route = Screens.NewsDetail.route + "/{id}",
